@@ -2,6 +2,8 @@ import React from 'react';
 import {useEffect, useState} from 'react';
 import './App.css';
 
+const API = "https://ecomm-b.herokuapp.com"
+
 function App() {
   return(
     <div className='App'>
@@ -15,7 +17,7 @@ function PhoneList(){
   const [mobiles, setMobiles] = useState([]);
 
  useEffect(() => {
-   fetch("http://localhost:4000/mobiles")
+   fetch(`${API}/mobiles`)
   .then((data) => data.json())
   .then((mbs) => setMobiles(mbs));
 },[]);
